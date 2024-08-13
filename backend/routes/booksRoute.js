@@ -58,7 +58,7 @@ router.get('/:id', async (request, response) => {
 });
 
 // Route to Update a book by id
-router.put('/books/:id', async (request, response) => {
+router.put('/:id', async (request, response) => {
   try {
     if (
       !request.body.title ||
