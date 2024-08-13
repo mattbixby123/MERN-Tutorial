@@ -1,25 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { useEffect } from 'react';
+import axios from 'axios';
 
-function App() {
+const App = () => {
+  useEffect(() => {
+    // Fetch data from the Express server
+    axios.get('http://localhost:5555/books')
+      .then(response => console.log(response))
+      // .then(response => setBooks(response.data))
+      .catch(error => console.error(error));
+  }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>MERN Stack Book App</h1>
     </div>
   );
-}
-
+};
 export default App;
